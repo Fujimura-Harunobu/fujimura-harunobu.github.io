@@ -654,24 +654,28 @@ a:focus-visible{
   margin-bottom: 4px;
 }
 
-.profile-text{
-  margin: 12px 0 12px;
-  color: var(--muted);
-}
 
 /* メタ情報 */
-.profile-meta{
+.profile-meta li{
+  color: var(--muted);
+}
+/* .profile-meta{
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
   gap: 8px;
-}
+} */
 
 .profile-meta .label{
   display: inline-block;
   min-width: 92px;
   font-size: 12px;
+  color: var(--muted);
+}
+
+/* PROFILE 本文をグレーに */
+.profile-text{
   color: var(--muted);
 }
 
@@ -698,6 +702,7 @@ a:focus-visible{
   width: 1px;
   background: var(--line);       /* ごく薄い線 */
 }
+
 
 /* スマホ：縦並び */
 @media (max-width: 720px){
@@ -835,7 +840,10 @@ a:focus-visible{
   height: 1.6em;
 }
 
-
+/* PROFILEのメタ情報（Affiliation/Interests/Pastimeなど）をグレーに */
+.profile-meta li{
+  color: var(--muted);
+}
 
 
 
