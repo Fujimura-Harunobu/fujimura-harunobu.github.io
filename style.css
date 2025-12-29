@@ -1,0 +1,376 @@
+:root{
+  --bg: #ffffff;
+  --surface: #ffffff;
+
+  --text: #0b1220;
+  --muted: #5b667a;
+
+  --line: #e6eaf2;
+
+  /* Slide palette */
+  --accent: #1F4880;
+  --accent-weak: #e9f0fb;
+  --accent-strong: #16355f;
+
+  --warm: #EB801A;
+  --sand: #CBAB82;
+
+  --max: 900px;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+
+/* =========================
+   Layout
+========================= */
+.container{
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* =========================
+   Header / Navigation
+========================= */
+.site-header{
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  z-index: 10;
+}
+
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.brand{
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.site-nav{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.site-nav a{
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.site-nav a:hover{
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
+.nav-toggle{
+  display: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 18px;
+}
+
+/* =========================
+   Sections
+========================= */
+.section{
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section h2{
+  margin: 0 0 10px;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-left: 12px;
+}
+
+.section h2::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 4px;
+  height: 1.1em;
+  border-radius: 99px;
+  background: var(--accent);
+}
+
+/* =========================
+   Chips (Category tabs)
+========================= */
+.chips{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 14px;
+}
+
+.chip{
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip.is-active{
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* =========================
+   PRESENTATIONS list
+========================= */
+.timeline{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.timeline li{
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 10px;
+}
+
+.timeline li .date{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline li .date::after{
+  content: attr(data-no);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Left column (date + number) */
+.date{
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.news-no{
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Right column */
+.tags{
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+/* Base tag style */
+.tag{
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 2px 8px;
+  background: var(--accent-weak);
+  color: var(--accent);
+  border: none; /* ← 発表タグは枠線なし */
+}
+
+/* 国際学会：淡いオレンジ */
+.tag.tag-international{
+  background: rgba(235,128,26,0.15);
+  color: #b45309;
+}
+
+/* その他：グレー */
+.tag.tag-other{
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* Event title */
+.title{
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.muted{
+  color: var(--muted);
+}
+
+/* =========================
+   Footer (if any)
+========================= */
+.site-footer{
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.footer-inner{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 720px){
+  .nav-toggle{ display: inline-block; }
+
+  .site-nav{
+    display: none;
+    width: 100%;
+    padding: 10px 0 4px;
+  }
+
+  .site-nav.is-open{ display: flex; }
+
+  .header-inner{ flex-wrap: wrap; }
+
+  .timeline li{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 左上の名前を紺色に */
+.brand{
+  color: var(--accent);
+}
+
+.brand:hover{
+  opacity: 0.85;
+}
+
+/* ヘッダーナビ：ホバー時に少し浮かせる */
+.site-nav a{
+  transition: 
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.site-nav a:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(31,72,128,0.12);
+}
+
+/* ブランド名：フォーカス時の見た目をヘッダーと統一 */
+.brand{
+  padding: 6px 8px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.brand:focus,
+.brand:focus-visible{
+  outline: none;
+  background: var(--accent-weak);
+}
+
+/* イベント名リンク */
+.event-link{
+  color: inherit;              /* 文字色を通常テキストと同じに */
+  text-decoration: none;       /* 下線を消す */
+}
+
+.event-link:hover{
+  text-decoration: underline;  /* ホバー時だけ下線 */
+}
+
+/* 発表資料リンク */
+.material-link{
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.material-link:hover{
+  text-decoration: underline;
+}
+
+/* ===== PUBLICATIONS タグ ===== */
+
+/* 査読あり：オレンジ */
+#publications .tag.tag-reviewed{
+  background: rgba(235,128,26,0.15);
+  color: #b45309;
+}
+
+/* 査読中：青 */
+#publications .tag.tag-under-review{
+  background: var(--accent-weak);
+  color: var(--accent);
+}
+
+/* ===== 通し番号（共通） ===== */
+.pub-no{
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* ジャーナルリンク */
+.journal-link{
+  color: inherit;        /* 通常テキストと同じ色 */
+  text-decoration: none;
+}
+
+.journal-link:hover{
+  text-decoration: underline;
+}
+
+/* arXiv リンク */
+.arxiv-link{
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.arxiv-link:hover{
+  text-decoration: underline;
+}
+
+/* arXiv 行の余白 */
+.preprint{
+  margin-top: 4px;
+}
+
+
+
+

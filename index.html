@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> 藤村 晴伸 | Homepage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">Harunobu Fujimura</a>
+
+      <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="#top">TOP</a>
+        <a href="#profile">PROFILE</a>
+        <a href="#research">RESEARCH</a>
+        <a href="#publications">PUBLICATIONS</a>
+        <a href="#news">PRESENTATIONS</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#en">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="main">
+    <section class="hero container">
+      <p class="kicker">YOUR FIELD / KEYWORDS</p>
+      <h1>Welcome to My Homepage!</h1>
+      <p class="lead">
+        ここにサイトの説明を1〜2文で書きます。研究・制作物・活動内容など。
+      </p>
+
+      <!-- <div class="button-row">
+        <a class="btn" href="#research">研究内容を見る</a>
+        <a class="btn btn-ghost" href="#publications">業績一覧</a>
+      </div> -->
+    </section>
+
+    <section class="section container" id="profile">
+      <h2>PROFILE</h2>
+
+      <div class="card">
+        <h3>PROFILE SNAPSHOT</h3>
+        <dl class="dl-grid">
+          <dt>Name</dt><dd> 藤村 晴伸（Harunobu Fujimura）</dd>
+          <dt>Affiliation</dt><dd>所属</dd>
+          <dt>Field</dt><dd>分野</dd>
+        </dl>
+      </div>
+
+      <div class="split">
+        <div>
+          <h3>自己紹介 / Brief Bio</h3>
+          <p>簡単な自己紹介を数行。</p>
+
+          <h3>略歴</h3>
+          <ul>
+            <li>2025- 〇〇</li>
+            <li>2024 〇〇</li>
+          </ul>
+        </div>
+
+        <figure class="avatar">
+          <!-- 画像を置くなら images/profile.jpg を作って差し替え -->
+          <div class="avatar-box">Photo</div>
+          <figcaption>（任意）</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section container" id="research">
+      <h2>RESEARCH</h2>
+      <h3>研究テーマ / Research Topics</h3>
+      <p>研究テーマの説明。</p>
+    </section>
+
+    <section class="section container" id="publications">
+      <h2>PUBLICATIONS</h2>
+
+      <!-- カテゴリタブ -->
+      <div class="chips" role="tablist" aria-label="カテゴリ">
+        <button class="chip is-active" data-filter="all">すべて</button>
+        <button class="chip" data-filter="reviewed">査読あり</button>
+        <button class="chip" data-filter="under-review">査読中</button>
+      </div>
+
+      <!-- 論文リスト -->
+      <ul class="timeline" id="pubList">
+
+        <!-- 査読あり -->
+        <li data-tags="reviewed">
+          <div class="date">
+            <span>2023.9.00</span>
+            <span class="pub-no"></span>
+          </div>
+
+          <div class="content">
+            <div class="tags">
+              <span class="tag tag-reviewed">査読あり</span>
+            </div>
+
+            <div class="title">
+              <a href="https://example-journal.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="event-link">
+                論文タイトル 
+              </a>
+            </div>
+
+            <div class="muted">
+              Author1, Author2, <strong>Harunobu Fujimura</strong><br>
+              <a href="https://example-journal.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="journal-link">
+                Journal Name
+              </a>
+            </div>
+            <div class="preprint">
+              <a href="https://arxiv.org/abs/2401.01234"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="arxiv-link">
+                arXiv:2401.01234
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- 査読中 -->
+        <li data-tags="under-review">
+          <div class="date">
+            <span>2025.11.20</span>
+            <span class="pub-no"></span>
+          </div>
+
+          <div class="content">
+            <div class="tags">
+              <span class="tag tag-under-review">査読中</span>
+            </div>
+
+            <div class="title">
+              論文タイトル 
+            </div>
+
+            <div class="muted">
+              Author1, <strong>Harunobu Fujimura</strong>, Author3
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+
+    <section class="section container" id="news">
+      <h2>PRESENTATIONS</h2>
+
+      <div class="chips" role="tablist" aria-label="カテゴリ">
+        <button class="chip is-active" data-filter="all">すべて</button>
+        <button class="chip" data-filter="international">国際学会</button>
+        <button class="chip" data-filter="domestic">国内学会</button>
+        <button class="chip" data-filter="oral">口頭発表</button>
+        <button class="chip" data-filter="poster">ポスター</button>
+        <button class="chip" data-filter="others">その他</button>
+      </div>
+
+      <ul class="timeline" id="newsList">
+
+        <li data-tags="international oral">
+          <div class="date">
+            <span>2025.9.15</span>
+            <span class="news-no"></span>
+          </div>
+          <div class="content">
+            <div class="tags">
+              <span class="tag tag-international">国際学会</span>
+              <span class="tag">口頭発表</span>
+            </div>
+            <div class="title">
+              <a href="https://example-conference.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="event-link">
+                イベント名（場所）
+              </a>
+            </div>
+            <div class="muted">タイトル：〇〇</div>
+            <div class="materials">
+              <a href="https://example.com/slides.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="material-link">
+                ▶ 発表資料（PDF）
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li data-tags="domestic poster">
+          <div class="date">
+            <span>2025.10.20</span>
+            <span class="news-no"></span>
+          </div>
+          <div class="content">
+            <div class="tags">
+              <span class="tag tag-domestic">国内学会</span>
+              <span class="tag">ポスター</span>
+            </div>
+            <div class="title">
+              <a href="https://example-conference.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="event-link">
+                イベント名（場所）
+              </a>
+            </div>
+            <div class="muted">タイトル：〇〇</div>
+            <div class="materials">
+              <a href="https://example.com/slides.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="material-link">
+                ▶ 発表資料（PDF）
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li data-tags="oral others">
+          <div class="date">
+            <span>2025.10.19</span>
+            <span class="news-no"></span>
+          </div>
+          <div class="content">
+            <div class="tags">
+              <span class="tag">口頭発表</span>
+              <span class="tag tag-other">その他</span>
+            </div>
+            <div class="title">
+              <a href="https://example-conference.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="event-link">
+                イベント名（場所）
+              </a>
+            </div>
+            <div class="muted">タイトル：〇〇</div>
+            <div class="materials">
+              <a href="https://example.com/slides.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="material-link">
+                ▶ 発表資料（PDF）
+              </a>
+            </div>
+          </div>
+        </li>
+
+        
+
+      </ul>
+    </section>
+
+
+    <section class="section container" id="contact">
+      <h2>CONTACT</h2>
+      <p>連絡方法を書きます。</p>
+      <ul>
+        <li>Email: yourname [at] example.com</li>
+      </ul>
+    </section>
+
+    <section class="section container" id="en">
+      <h2>EN</h2>
+      <p>英語ページを分けたい場合は、別のHTML（en.html）を作るのが一般的です。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© Your Name</small>
+      <small class="muted">Last update: 2025-12-28</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
