@@ -104,9 +104,11 @@ function renumberNews() {
   const items = Array.from(document.querySelectorAll("#newsList li"))
     .filter(li => li.style.display !== "none");
 
+  const total = items.length;
+
   items.forEach((li, index) => {
     const no = li.querySelector(".news-no");
-    if (no) no.textContent = `No.${index + 1}`;
+    if (no) no.textContent = `No.${total - index}`;
   });
 }
 
@@ -159,19 +161,26 @@ function renumberPublications() {
   const items = Array.from(document.querySelectorAll("#pubList li"))
     .filter(li => li.style.display !== "none");
 
+  const total = items.length;
+
   items.forEach((li, index) => {
     const no = li.querySelector(".pub-no");
-    if (no) no.textContent = `No.${index + 1}`;
+    if (no) no.textContent = `No.${total - index}`;
   });
 }
 
+/*************************************************
+ *  7. AWARDS: 通し番号（表示中のみ）
+ *************************************************/
 function renumberAwards() {
   const items = Array.from(document.querySelectorAll("#awards .timeline li"));
+
+  const total = items.length;
 
   items.forEach((li, index) => {
     const no = li.querySelector(".award-no");
     if (no) {
-      no.textContent = `No.${index + 1}`;
+      no.textContent = `No.${total - index}`;
     }
   });
 }
