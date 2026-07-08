@@ -246,9 +246,11 @@ document.addEventListener("DOMContentLoaded", () => {
   renumberAwards();
 });
 
-// index.html のみ
-if (navigator.language.startsWith("en")) {
-  location.href = "index-en.html";
+
+const page = location.pathname.split("/").pop() || "index.html";
+
+if (page === "index.html" && navigator.language.toLowerCase().startsWith("en")) {
+  location.replace("index-en.html");
 }
 
 
