@@ -877,3 +877,127 @@ section{
 }
 
 
+
+/* ===== PRESENTATIONS: scrollable list ===== */
+#newsList {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* ===== GALLERY ENTRY / GALLERY PAGE ===== */
+.gallery-entry {
+  text-align: center;
+  padding-top: 22px;
+  padding-bottom: 36px;
+}
+.gallery-entry p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.gallery-entry-link, .gallery-back, .gallery-language {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 18px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.gallery-entry-link:hover, .gallery-back:hover, .gallery-language:hover {
+  background: var(--accent-weak);
+  border-color: var(--accent);
+}
+.gallery-page-header {
+  padding: 36px 0 18px;
+  text-align: center;
+}
+.gallery-page-header h1 {
+  color: var(--accent);
+  margin: 0 0 6px;
+  font-size: clamp(26px, 4vw, 38px);
+}
+.gallery-page-header p {
+  margin: 0;
+  color: var(--muted);
+}
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 48px;
+}
+.gallery-card {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.gallery-image-placeholder {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  background: var(--accent-weak);
+  font-size: 14px;
+}
+.gallery-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.gallery-card figcaption {
+  padding: 10px 14px 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+@media (max-width: 800px) {
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+
+
+
+/* ===== GALLERY: 2列レイアウト ===== */
+
+.gallery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* 横長写真は2列分を使用 */
+.gallery-wide {
+  grid-column: span 2;
+}
+
+/* 写真の縦横比を維持 */
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* スマートフォンでも2列を維持 */
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+
+
